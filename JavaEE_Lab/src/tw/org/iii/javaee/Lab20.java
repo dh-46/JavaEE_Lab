@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 	Servlet implementation class Lab20
- * 	20180908AM2 JDBC
+ * 	20180908AM2 JDBC Driver
  */
 @WebServlet("/Lab20")
 public class Lab20 extends HttpServlet {
