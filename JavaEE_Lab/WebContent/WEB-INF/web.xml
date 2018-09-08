@@ -4,5 +4,9 @@
     <param-name>upload-dir</param-name>
     <param-value>C:\Users\Daniel\git\JavaEE_Lab\JavaEE_Lab\WebContent\Upload</param-value>
   </context-param>
+  <context-param>
+    <param-name>temp-dir</param-name>
+    <param-value>C:\Users\Daniel\git\JavaEE_Lab\JavaEE_Lab\WebContent\temp</param-value>
+  </context-param>
 </web-app>
 <!-- web.xml 配置檔 -->
