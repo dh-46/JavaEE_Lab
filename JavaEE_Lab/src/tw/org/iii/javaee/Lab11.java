@@ -56,7 +56,7 @@ public class Lab11 extends HttpServlet {
 			InputStream in = upload.getInputStream();
 			BufferedInputStream bin = new BufferedInputStream(in);
 			
-			byte[] buf = in.readAllBytes();
+			byte[] buf = in.readAllBytes(); // Java 9 之後
 			bin.close();
 			
 			FileOutputStream fout = new FileOutputStream(new File(uploadPath, fileName));
