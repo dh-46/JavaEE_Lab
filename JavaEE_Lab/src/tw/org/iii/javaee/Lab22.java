@@ -53,11 +53,12 @@ public class Lab22 extends HttpServlet {
 			if (rs.next()) {
 				String src = rs.getString("password");
 				if (LabAPI.checkPassword(src,password)) {
-					String realname = rs.getString("realname");
+					//String realname = rs.getString("realname");
 					// writer.println("Welcome, "+ realname);
+					
 					HttpSession session = request.getSession();
 					Member member = new Member(rs.getString("realname"), rs.getString("account"), 18);
-					session.setAttribute("member", member);
+					session.setAttribute("member2", member);
 					response.sendRedirect("Lab32");
 				} else {
 					//writer.println("Password Error");
@@ -71,6 +72,7 @@ public class Lab22 extends HttpServlet {
 			
 			System.out.println("OK");
 		} catch (Exception e) {
+			response.sendRedirect("lab22.html");
 			System.out.println(e);
 		}
 		

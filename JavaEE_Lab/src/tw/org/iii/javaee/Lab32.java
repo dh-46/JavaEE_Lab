@@ -29,7 +29,7 @@ public class Lab32 extends HttpServlet {
 			response.sendRedirect("lab22.html");
 		} else {
 			// 合法登入
-			Member member = (Member)session.getAttribute("member");
+			Member member = (Member)session.getAttribute("member2");
 			writer.println(member.getName() + " : "+ member.getAccount());
 			writer.println("<hr>");
 			writer.println("<a href='Logout'>Logout</a>");

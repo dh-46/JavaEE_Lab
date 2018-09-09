@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  * 	註: 目前的主流是Spring
  */
 @WebServlet("/Lab17")
-public class Lab17 extends HttpServlet {
+public class Lab17v2 extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
@@ -46,7 +46,10 @@ public class Lab17 extends HttpServlet {
 		int result = model.add();
 		
 		//	2. view
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Lab19?result=" + result + "&x=" + x + "&y=" + y);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("lab55.jsp");
+		request.setAttribute("x", x);
+		request.setAttribute("y", y);
+		request.setAttribute("result", result);
 		
 		//	Lab19 現在擁有x,y,result 三個參數
 		dispatcher.forward(request, response);
