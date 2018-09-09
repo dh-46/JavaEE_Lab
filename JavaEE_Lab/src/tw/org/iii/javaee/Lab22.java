@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * 	Servlet implementation class Lab22
@@ -53,12 +54,18 @@ public class Lab22 extends HttpServlet {
 				String src = rs.getString("password");
 				if (LabAPI.checkPassword(src,password)) {
 					String realname = rs.getString("realname");
-					writer.println("Welcome, "+ realname);
+					// writer.println("Welcome, "+ realname);
+					HttpSession session = request.getSession();
+					Member member = new Member(rs.getString("realname"), rs.getString("account"), 18);
+					session.setAttribute("member", member);
+					response.sendRedirect("Lab32");
 				} else {
-					writer.println("Password Error");
+					//writer.println("Password Error");
+					response.sendRedirect("lab22.html");
 				}
 			} else {
-				writer.println("Account not found!");
+				// writer.println("Account not found!");
+				response.sendRedirect("lab22.html");
 			}
 			
 			
